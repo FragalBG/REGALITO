@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0b2e, #4c1d95);
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1, p {
+  margin: 0 0 12px;
+}
+
+.boton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #f3c4df;
+  color: #3b1454;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.boton:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.boton:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(540px, calc(100vw - 32px));
+  margin: 16px auto;
+}
+
+.marco {
+  min-width: 0;
+  margin: 0;
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.corazones {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.corazon {
+  display: inline-block;
+  color: #830d28;
+  font-family: Arial, sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  animation: latido 1.2s ease-in-out infinite;
+}
+
+.corazon::before {
+  content: "♥";
+}
+
+.corazon:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.corazon:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+.detalle-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.flores {
+  width: 96px;
+  height: 68px;
+  color: #eb86bf;
+}
+
+.detalle-editorial__texto {
+  color: #f3c4df;
+  font-family: "Bodoni 72", Didot, "Times New Roman", serif;
+  font-size: clamp(3rem, 12vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 0.95;
+  padding-left: 0.24em;
+  text-shadow: 0 3px 18px rgb(243 196 223 / 25%);
+}
+
+.sorpresa:not([hidden]) {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.titulo-feliz {
+  z-index: 1;
+  margin: 0;
+  padding: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: aparecer 700ms ease-out both;
+}
+
+.confeti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confeti span {
+  position: absolute;
+  top: -20px;
+  left: var(--x);
+  width: 10px;
+  height: 16px;
+  background: var(--color);
+  opacity: 0;
+}
+
+.confeti.animando span {
+  animation: caer 3s ease-in var(--retraso) both;
+}
+
+@keyframes caer {
+  0% {
+    opacity: 1;
+    transform: translateY(-2vh) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corazon,
+  .titulo-feliz,
+  .confeti.animando span {
+    animation: none;
+  }
+}

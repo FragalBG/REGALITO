@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversario</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="tarjeta">
+        <h1>Tengo un pequeño obsequio para ti</h1>
+        <p>Te va a gustar</p>
+        <div class="corazones" aria-hidden="true">
+            <span class="corazon"></span>
+            <span class="corazon"></span>
+            <span class="corazon"></span>
+        </div>
+        <button class="boton" id="abrirCollage" type="button">Presiona aquí</button>
+    </main>
+
+    <section class="pagina collage" id="collage" hidden>
+        <div class="panel">
+            <div class="detalle-editorial">
+                <svg class="flores" viewBox="0 0 120 84" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M60 77c-2-20 1-37 0-51M60 62c-15-12-25-10-30-8 6 11 15 15 30 13M60 68c13-13 24-15 31-14-4 12-15 19-31 20" stroke-width="2"/>
+                        <g fill="#f3c4df" stroke-width="1.5">
+                            <ellipse cx="60" cy="18" rx="5" ry="10"/>
+                            <ellipse cx="60" cy="18" rx="5" ry="10" transform="rotate(60 60 18)"/>
+                            <ellipse cx="60" cy="18" rx="5" ry="10" transform="rotate(120 60 18)"/>
+                            <ellipse cx="34" cy="29" rx="4" ry="8"/>
+                            <ellipse cx="34" cy="29" rx="4" ry="8" transform="rotate(60 34 29)"/>
+                            <ellipse cx="34" cy="29" rx="4" ry="8" transform="rotate(120 34 29)"/>
+                            <ellipse cx="88" cy="31" rx="4" ry="8"/>
+                            <ellipse cx="88" cy="31" rx="4" ry="8" transform="rotate(60 88 31)"/>
+                            <ellipse cx="88" cy="31" rx="4" ry="8" transform="rotate(120 88 31)"/>
+                        </g>
+                        <g fill="#f4c95d" stroke="none">
+                            <circle cx="60" cy="18" r="3"/>
+                            <circle cx="34" cy="29" r="2.5"/>
+                            <circle cx="88" cy="31" r="2.5"/>
+                        </g>
+                    </g>
+                </svg>
+                <span class="detalle-editorial__texto">SEX</span>
+            </div>
+            <h2>Los momentos tuyos</h2>
+
+            <div class="rejilla" id="rejilla"></div>
+
+            <button class="boton boton--secundario" id="verSorpresa" type="button">Ver la sorpresa</button>
+        </div>
+    </section>
+
+    <section class="pagina sorpresa" id="sorpresa" hidden>
+        <div class="confeti" id="confeti" aria-hidden="true"></div>
+        <div class="alienes" id="alienes"></div>
+        <h2 class="titulo-feliz">Feliz aniversario 3 meses</h2>
+        <button class="boton boton-chico" id="volver" type="button">Volver</button>
+    </section>
+</body>
+</html>
